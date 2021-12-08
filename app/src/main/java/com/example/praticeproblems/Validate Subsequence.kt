@@ -5,13 +5,15 @@ fun main(){
     print(isValidSubsequence(arr, seq))
 }
 fun isValidSubsequence(array: List<Int>, sequence: List<Int>): Boolean {
-    for (i in sequence) {
-        if (array.contains(i)) {
-            continue
-        } else {
-            return false
+    var index = 0
+    for (i in array) {
+        if(index == sequence.size){
+            break
         }
-
+        if(sequence[index]== i){
+            index++
+        }
     }
-    return true
+    return index == sequence.size
 }
+
